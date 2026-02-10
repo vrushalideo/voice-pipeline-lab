@@ -1,0 +1,71 @@
+{
+  "info": {
+    "_postman_id": "be3098fa-0e04-4b39-9624-be2289632f3d",
+    "name": "voice-pipeline-lab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52252520",
+    "_collection_link": "https://go.postman.co/collection/52252520-be3098fa-0e04-4b39-9624-be2289632f3d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Deepgram — STT test",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "OpenAI Text Test",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{OPENAI_API_KEY}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"gpt-4.1-mini\",\n  \"input\": \"Say hello in one short friendly sentence.\",\n  \"temperature\": 0.2,\n  \"max_output_tokens\": 60\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.openai.com/v1/responses",
+          "protocol": "https",
+          "host": [
+            "api",
+            "openai",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "responses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ElevenLabs — TTS test",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
