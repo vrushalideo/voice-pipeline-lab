@@ -35,3 +35,23 @@ python src/run_pipeline.py
 
 Built as a support/debug style lab to inspect API request/response behavior,
 parameter effects, and end-to-end voice pipeline timing.
+
+## Postman
+
+This repo includes a Postman collection to reproduce API calls without running code.
+
+- Collection: `postman/voice-pipeline-lab.postman_collection.json`
+- Environment template: `postman/voice-pipeline-lab.postman_environment.example.json`
+
+### Import steps
+1. Postman → Import → select the collection JSON
+2. Postman → Environments → Import → select the environment example JSON
+3. Fill in:
+   - `OPENAI_API_KEY`
+   - `DEEPGRAM_API_KEY`
+   - `ELEVENLABS_API_KEY`
+4. Select the environment and run requests:
+   - OpenAI (Responses API)
+   - Deepgram (STT file upload)
+   - ElevenLabs (TTS audio output)
+
